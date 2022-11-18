@@ -1,0 +1,29 @@
+{
+  "order": 0,
+  "index_patterns": "*message*",
+  "settings": {
+    "index": {
+      "refresh_interval": "1s"
+    }
+  },
+  "mappings": {
+      "properties": {
+        "created": {
+          "type": "long"
+        },
+        "messageId": {
+          "type": "keyword",
+          "index": true
+        },
+        "payload": {
+          "type": "keyword",
+          "index": true
+        },
+        "queue": {
+          "type": "keyword",
+          "index": true
+        }
+      }
+  },
+  "aliases": {}
+}

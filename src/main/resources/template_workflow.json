@@ -1,0 +1,95 @@
+{
+    "order" : 0,
+    "index_patterns" : [
+      "*workflow*"
+    ],
+    "settings" : {
+      "index" : {
+        "refresh_interval" : "1s",
+        "unassigned" : {
+          "node_left" : {
+            "delayed_timeout" : "5m"
+          }
+        },
+        "number_of_shards" : "1",
+        "auto_expand_replicas" : "0-all",
+        "number_of_replicas" : "0"
+      }
+    },
+    "mappings" : {
+      "properties" : {
+        "updateTime" : {
+          "format" : "strict_date_optional_time||epoch_millis",
+          "type" : "date",
+          "doc_values" : true
+        },
+        "rawJSON" : {
+          "index" : false,
+          "type" : "text"
+        },
+        "failedReferenceTaskNames" : {
+          "index" : false,
+          "type" : "text"
+        },
+        "version" : {
+          "type" : "long",
+          "doc_values" : true
+        },
+        "tags" : {
+          "type" : "object"
+        },
+        "executionTime" : {
+          "type" : "long",
+          "doc_values" : true
+        },
+        "output" : {
+          "type" : "object"
+        },
+        "input" : {
+          "type" : "object"
+        },
+        "reasonForIncompletion" : {
+          "index" : true,
+          "type" : "keyword",
+          "doc_values" : true
+        },
+        "correlationId" : {
+          "index" : true,
+          "type" : "keyword",
+          "doc_values" : true
+        },
+        "startTime" : {
+          "format" : "strict_date_optional_time||epoch_millis",
+          "type" : "date",
+          "doc_values" : true
+        },
+        "workflowType" : {
+          "index" : true,
+          "type" : "keyword",
+          "doc_values" : true
+        },
+        "endTime" : {
+          "format" : "strict_date_optional_time||epoch_millis",
+          "type" : "date",
+          "doc_values" : true
+        },
+        "event" : {
+          "index" : true,
+          "type" : "keyword"
+        },
+        "workflowId" : {
+          "index" : true,
+          "type" : "keyword",
+          "doc_values" : true
+        },
+        "status" : {
+          "index" : true,
+          "type" : "keyword",
+          "doc_values" : true
+        }
+      }
+    },
+    "aliases" : {
+      "workflow-datasets" : { }
+    }
+  }  

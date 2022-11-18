@@ -1,0 +1,75 @@
+{
+  "properties" : {
+    "updateTime" : {
+      "format" : "strict_date_optional_time||epoch_millis",
+      "type" : "date",
+      "doc_values" : true
+    },
+    "rawJSON" : {
+      "index" : false,
+      "type" : "text"
+    },
+    "failedReferenceTaskNames" : {
+      "index" : false,
+      "type" : "text"
+    },
+    "version" : {
+      "type" : "long",
+      "doc_values" : true
+    },
+    "tags" : {
+      "type" : "object"
+    },
+    "executionTime" : {
+      "type" : "long",
+      "doc_values" : true
+    },
+    "output" : {
+      "type" : "object",
+      "enabled": false
+    },
+    "input" : {
+      "type" : "object",
+      "enabled": false
+    },
+    "reasonForIncompletion" : {
+      "index" : true,
+      "type" : "keyword",
+      "doc_values" : true
+    },
+    "correlationId" : {
+      "index" : true,
+      "type" : "keyword",
+      "doc_values" : true
+    },
+    "startTime" : {
+      "format" : "strict_date_optional_time||epoch_millis",
+      "type" : "date",
+      "doc_values" : true
+    },
+    "workflowType" : {
+      "index" : true,
+      "type" : "keyword",
+      "doc_values" : true
+    },
+    "endTime" : {
+      "format" : "strict_date_optional_time||epoch_millis",
+      "type" : "date",
+      "doc_values" : true
+    },
+    "event" : {
+      "index" : true,
+      "type" : "keyword"
+    },
+    "workflowId" : {
+      "index" : true,
+      "type" : "keyword",
+      "doc_values" : true
+    },
+    "status" : {
+      "index" : true,
+      "type" : "keyword",
+      "doc_values" : true
+    }
+  }
+}

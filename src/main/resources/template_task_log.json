@@ -1,0 +1,25 @@
+{
+  "order": 0,
+  "index_patterns": "*task*log*",
+  "settings": {
+    "index": {
+      "refresh_interval": "1s"
+    }
+  },
+  "mappings": {
+	  "properties": {
+	    "createdTime": {
+	      "type": "long"
+	    },
+	    "log": {
+	      "type": "keyword",
+	      "index": true
+	    },
+	    "taskId": {
+	      "type": "keyword",
+	      "index": true
+	    }
+	  }
+  },
+  "aliases": {}
+}

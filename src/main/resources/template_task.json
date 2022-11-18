@@ -1,0 +1,85 @@
+{
+  "order": 0,
+  "index_patterns": "*task_*",
+  "settings": {
+    "index": {
+      "refresh_interval": "1s",
+      "unassigned.node_left.delayed_timeout": "5m",
+      "number_of_replicas": 0,
+      "number_of_shards": 1,
+      "auto_expand_replicas": "0-all"
+    }
+  },
+  "mappings": {
+    "properties": {
+      "correlationId": {
+        "type": "keyword",
+        "index": true
+      },
+      "endTime": {
+        "type": "date",
+        "format": "strict_date_optional_time||epoch_millis"
+      },
+      "executionTime": {
+        "type": "long"
+      },
+      "input": {
+        "type": "object",
+        "enabled": false
+      },
+      "output": {
+        "type": "object",
+        "enabled": false
+      },
+      "tags": {
+        "type": "object"
+      },
+      "queueWaitTime": {
+        "type": "long"
+      },
+      "reasonForIncompletion": {
+        "type": "keyword",
+        "index": true
+      },
+      "scheduledTime": {
+        "type": "date",
+        "format": "strict_date_optional_time||epoch_millis"
+      },
+      "startTime": {
+        "type": "date",
+        "format": "strict_date_optional_time||epoch_millis"
+      },
+      "status": {
+        "type": "keyword",
+        "index": true
+      },
+      "taskDefName": {
+        "type": "keyword",
+        "index": true
+      },
+      "taskId": {
+        "type": "keyword",
+        "index": true
+      },
+      "taskType": {
+        "type": "keyword",
+        "index": true
+      },
+      "updateTime": {
+        "type": "date",
+        "format": "strict_date_optional_time||epoch_millis"
+      },
+      "workflowId": {
+        "type": "keyword",
+        "index": true
+      },
+      "workflowType": {
+        "type": "keyword",
+        "index": true
+      }
+    }
+  },
+   "aliases": {
+    "task-datasets": {}
+  }
+}
